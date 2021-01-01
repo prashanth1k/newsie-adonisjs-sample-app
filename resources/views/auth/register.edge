@@ -1,0 +1,30 @@
+@layout("app")
+
+@section("page")
+<div style="padding-left: 20%;padding-right: 20%">
+    <h3 class="article-title">Sign up</h3>
+    @if(flashMessages.has('errors.email'))
+    <p class="error-text">
+        {{flashMessages.get("errors.email")}}
+    </p>
+    @endif
+    @if(flashMessages.has('notification'))
+        <p class="info-text">
+            {{flashMessages.get("notification")}}
+        </p>
+    @endif
+    <form action="{{ `/register`}}" method="POST">
+        {{ csrfField() }}
+        <label for="name">Name</label>
+        <input type="text" value="{{user.name}}" name="name" required>
+        <label for="title">Email</label>
+        <input type="text" value="{{user.email}}" name="email" required>
+        <label for="password">Password</label>
+        <input type="password" value="{{user.password}}" name="password" required>
+
+        <button type="submit">Sign up</button>
+
+    </form>
+       
+</div>
+@endsection

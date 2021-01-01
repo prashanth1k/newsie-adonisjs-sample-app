@@ -1,0 +1,42 @@
+@layout("app")
+
+@section("page")
+
+<section class="hero">
+    <div class="row">
+        <div class="column">  
+            <h3 class="title"> Welcome to newsie! </h3>
+            <p class="subtitle">
+                Positive news across the world.
+            </p>
+        </div>
+        <div class="column center">
+            <img src="/images/smiley.png" style="width:150px;height:150px;margin:auto;" class="column"/>
+        </div>
+
+    </div>
+</section>
+
+
+<div class="row row-wrap">
+    @each(article in articles)
+    <div class="column column-50">
+            <aside class="card">
+                @if(auth.user)
+                <a href="/articles/{{article.id}}/edit" class="article-meta-small">edit</a>
+                @endif
+                <h3>
+                    <a href="{{ route('ArticlesController.show', {id: article.slug}) }}">
+                    {{ article.title }}
+                    </a>
+                </h3>
+                <p class="article-meta">Updated: {{article.publishDate}}</p>
+
+                <p>
+                    {{{ article.content ? article.content.substring(0,100) : "" }}}
+                </p>
+            </aside>    
+    </div>
+    @endeach
+</div>
+@endsection

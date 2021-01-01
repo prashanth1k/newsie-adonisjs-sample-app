@@ -1,0 +1,139 @@
+html,
+body {
+  background-color: #f7f8fa;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  color: #46444c;
+  position: relative;
+}
+
+body:before {
+  content: '';
+  background: #5a45ff;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  position: absolute;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #5a45ff;
+  text-decoration: none;
+}
+
+.navbar {
+  margin-bottom: 10px;
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: top;
+  width: 100%;
+  z-index: 3;
+}
+
+.navbar .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f0f1f1;
+}
+
+.navbar li {
+  float: right;
+  margin-bottom: 0;
+}
+
+.navbar li a {
+  display: block;
+  color: #5a45ff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #c2d4e0;
+}
+
+.content {
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.hero {
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+.center {
+  text-align: center;
+}
+
+.title {
+  font-weight: 800;
+}
+
+.card {
+  border-color: #172531;
+  background-color: #e4eaee;
+  border: 2px;
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 0.3em;
+}
+
+.article-title {
+  padding-top: 20px;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  padding-bottom: 3%;
+}
+
+.error-text {
+  color: darkred;
+  font-size: smaller;
+}
+.info-text {
+  color: blue;
+  font-size: smaller;
+}
+
+button {
+  background-color: #5a45ff;
+  border-color: #5a45ff;
+}
+
+.article-meta-small {
+  float: right;
+  color: grey;
+  font-size: small;
+}
+
+.article-meta {
+  color: grey;
+  font-size: smaller;
+}
+
+footer {
+  margin-top: 3%;
+  padding: 1% 1%;
+  font-size: small;
+  color: rgb(180, 182, 204);
+  background-color: rgb(226, 222, 222);
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdonisJS - A Modern Web Framework For Node.js</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+  <!-- Milligram CSS -->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+  />
+  <link rel="stylesheet"  href="/css/styles.css"/>
+
+</head>
+<body>
+
+  <main>
+    <nav class="navbar">
+      <h3 class="logo"><a href="/">Newsie</a></h3>
+      <ul>
+        <li><a href="/about">about</a></li>
+        @if(auth.user)
+        <li>
+          <a href="/logout" onclick="event.preventDefault();document.getElementById('logout').submit()">
+            logout
+            <form id="logout" action="/logout" method="POST">{{ csrfField() }}</form>
+          </a>
+        </li>
+        <li><a href="/articles/new">new</a></li>
+        @else
+        <li><a href="/login">login</a></li>
+        @endif
+        
+      </ul>
+    </nav>
+    <div class="content">
+      @!section("page") 
+    </div>
+  </main>
+
+  <footer>
+    (c) Company 42
+    <span style="float:right"><a href="https://github.com/prashanth1k/newsie-sample-app-adonisjs">github</a></span>
+  </footer>
+</body>
+</html>

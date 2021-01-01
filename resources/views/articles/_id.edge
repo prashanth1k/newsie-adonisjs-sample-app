@@ -1,0 +1,13 @@
+@layout("app")
+
+@section("page")
+<div>
+    @if(auth.user)
+    <a class="article-meta-small" href="/articles/{{article.id}}/edit">edit</a>
+    @endif
+    <h1 class="article-title">{{ article.title }}</h1>
+    <article >
+        {{{ article.fmtContent }}}
+    </article>
+</div>
+@endsection
